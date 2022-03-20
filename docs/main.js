@@ -1,6 +1,5 @@
-"use strict";
-//exports.__esModule = true;
-
+//import * as express from "express";
+//import {card} from "./card";
 var card = /** @class */ (function () {
     function card(Term, Definition) {
         this.Term = Term;
@@ -8,22 +7,20 @@ var card = /** @class */ (function () {
     }
     return card;
 }());
-
-var express = require("express");
-var card_1 = require("./card");
-var app = express();
+//const app = express()
 var port = 3000;
-var activeSet = [new card_1.card("hablo", "i speak"), new card_1.card("说", "i speak")];
-app.get('/', function (req, res) {
-    res.send('Hello World!');
-});
-app.listen(port, function () {
-    console.log("Example app listening on port ".concat(port));
-});
+var activeSet = [new card("hablo", "i speak"), new card("说", "i speak")];
+/*app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})*/
 function showNext() {
     //activeSet = [new card("hablo", "i speak"), new card("说", "i speak")];
     console.log(activeSet);
-    var displayed = new card_1.card("hablo", "i speak");
+    var displayed = new card("hablo", "i speak");
     document.getElementsByClassName("card")[0].textContent = displayed.Term;
     activeSet = activeSet.slice(1);
     //randomize

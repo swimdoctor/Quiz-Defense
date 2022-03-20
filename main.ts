@@ -1,16 +1,27 @@
-import * as express from "express";
-import {card} from "./card";
-const app = express()
+//import * as express from "express";
+//import {card} from "./card";
+
+class card {
+  public Term : string
+  public Definition : string
+
+  constructor(Term : string, Definition : string) {
+      this.Term = Term
+      this.Definition = Definition
+  }
+}
+
+//const app = express()
 const port = 3000
 var activeSet : Array<card> = [new card("hablo", "i speak"), new card("说", "i speak")]
 
-app.get('/', (req, res) => {
+/*app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
-})
+})*/
 
 function showNext() {
   //activeSet = [new card("hablo", "i speak"), new card("说", "i speak")];
