@@ -48,7 +48,7 @@ function shuffleArray(array) {
 }
 
 function goToMenu(){
-  document.getElementById("card").style.display = "none"
+  document.getElementById("card").style.width = "500px";
   /*x.style.display = "block";
   x.style.display = "none";*/
 }
@@ -59,6 +59,7 @@ function goToSetCreation(){
 }
 
 function goToPlaySet(){
-  document.getElementsByClassName("card")[0].style.display = "inline_block"
+  document.getElementById("mySidebar").style.width = "500px";
+  document.getElementById("card").style.display = "inline_block"
 
 }
