@@ -54,11 +54,11 @@ function goToMenu(){
 }
 
 function goToSetCreation(){
-  document.getElementById("card").style.display = "none"
+  document.getElementsByClassName("card")[0].style.display = "none"
   
 }
 
 function goToPlaySet(){
-  document.getElementById("card").style.display = "inline_block"
+  document.getElementsByClassName("card")[0].style.display = "inline_block"
 
 }
