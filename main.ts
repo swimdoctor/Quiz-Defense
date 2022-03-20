@@ -48,11 +48,11 @@ function shuffleArray(array) {
 }
 
 function goToMenu(){
-  
+  document.getElementById("card").setActive();
 }
 
 function goToSetCreation(){
-
+  
 }
 
 function goToPlaySet(){
