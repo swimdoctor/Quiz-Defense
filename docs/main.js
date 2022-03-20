@@ -1,5 +1,14 @@
 "use strict";
-exports.__esModule = true;
+//exports.__esModule = true;
+
+var card = /** @class */ (function () {
+    function card(Term, Definition) {
+        this.Term = Term;
+        this.Definition = Definition;
+    }
+    return card;
+}());
+
 var express = require("express");
 var card_1 = require("./card");
 var app = express();
