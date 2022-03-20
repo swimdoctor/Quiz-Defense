@@ -45,3 +45,15 @@ function shuffleArray(array) {
       array[j] = temp;
   }
 }
+
+function goToMenu(){
+  
+}
+
+function goToSetCreation(){
+
+}
+
+function goToPlaySet(){
+
+}
