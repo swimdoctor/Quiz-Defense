@@ -54,11 +54,10 @@ function goToMenu(){
 }
 
 function goToSetCreation(){
-  document.getElementsByClassName("card")[0].style.display = "none"
+  (document.getElementsByClassName("card") as HTMLCollectionOf<HTMLElement>)[0].style.display = "none"
   
 }
 
 function goToPlaySet(){
-  document.getElementsByClassName("card")[0].style.display = "inline_block"
-
+  (document.getElementsByClassName("card") as HTMLCollectionOf<HTMLElement>)[0].style.display = "inline_block";
 }

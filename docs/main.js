@@ -18,6 +18,10 @@ function showNext() {
     shuffleArray(activeSet);
     activeSet.push(displayed);
 }
+function flip() {
+    document.getElementById("card").textContent = activeSet[activeSet.length - 1].Definition;
+    document.getElementById("card").style.backgroundColor = "rgb(50, 255, 50)";
+}
 /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
 function openNav() {
     document.getElementById("mySidebar").style.width = "250px";
@@ -35,4 +39,15 @@ function shuffleArray(array) {
         array[i] = array[j];
         array[j] = temp;
     }
+}
+function goToMenu() {
+    document.getElementById("card").style.display = "none";
+    /*x.style.display = "block";
+    x.style.display = "none";*/
+}
+function goToSetCreation() {
+    document.getElementsByClassName("card")[0].style.display = "none";
+}
+function goToPlaySet() {
+    document.getElementsByClassName("card")[0].style.display = "block";
 }
