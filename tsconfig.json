@@ -1,5 +1,14 @@
 {
     "compilerOptions": {
-        "outDir": "docs"
-    }
+        "module": "commonjs",
+        "target": "es5",
+        "sourceMap": true,
+        "outFile": "/docs/main.js",
+        "lib": [
+          "dom",
+          "es2015",
+          "es5",
+          "es6"
+        ]
+      }
 }
