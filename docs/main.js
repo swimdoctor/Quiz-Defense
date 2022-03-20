@@ -1,9 +1,10 @@
 "use strict";
 exports.__esModule = true;
 var express = require("express");
+var card_1 = require("./card");
 var app = express();
 var port = 3000;
-var activeSet;
+var activeSet = [new card_1.card("hablo", "i speak"), new card_1.card("说", "i speak")];
 app.get('/', function (req, res) {
     res.send('Hello World!');
 });
@@ -11,8 +12,10 @@ app.listen(port, function () {
     console.log("Example app listening on port ".concat(port));
 });
 function showNext() {
-    var displayed = activeSet[0];
-    document.getElementById("card").textContent = displayed.Term;
+    //activeSet = [new card("hablo", "i speak"), new card("说", "i speak")];
+    console.log(activeSet);
+    var displayed = new card_1.card("hablo", "i speak");
+    document.getElementsByClassName("card")[0].textContent = displayed.Term;
     activeSet = activeSet.slice(1);
     //randomize
     shuffleArray(activeSet);
@@ -41,7 +44,8 @@ function shuffleArray(array) {
     }
 }
 function goToMenu() {
-    document.getElementById("card").style.display = "none";
+    document.getElementById("card").style.width = "500px";
+    document.getElementsByClassName("card")[0].style.display = "none";
     /*x.style.display = "block";
     x.style.display = "none";*/
 }
@@ -50,4 +54,5 @@ function goToSetCreation() {
 }
 function goToPlaySet() {
     document.getElementsByClassName("card")[0].style.display = "block";
+    showNext();
 }

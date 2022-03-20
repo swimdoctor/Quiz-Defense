@@ -1,4 +1,5 @@
-class card {
+
+export class card {
     public Term : string
     public Definition : string
 

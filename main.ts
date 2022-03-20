@@ -1,7 +1,8 @@
-import * as express from "express"
+import * as express from "express";
+import {card} from "./card";
 const app = express()
 const port = 3000
-let activeSet : Array<card> = [new card("hablo", "i speak"), new card("说", "i speak")]
+var activeSet : Array<card> = [new card("hablo", "i speak"), new card("说", "i speak")]
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
@@ -12,8 +13,10 @@ app.listen(port, () => {
 })
 
 function showNext() {
-  let displayed : card = activeSet[0]
-  document.getElementById("card").textContent = displayed.Term
+  //activeSet = [new card("hablo", "i speak"), new card("说", "i speak")];
+  console.log(activeSet);
+  let displayed = new card("hablo", "i speak");
+  (document.getElementsByClassName("card") as HTMLCollectionOf<HTMLElement>)[0].textContent = displayed.Term
   activeSet = activeSet.slice(1)
   //randomize
   shuffleArray(activeSet)
@@ -60,6 +63,6 @@ function goToSetCreation(){
 }
 
 function goToPlaySet(){
-  showNext()
   (document.getElementsByClassName("card") as HTMLCollectionOf<HTMLElement>)[0].style.display = "block";
+  showNext();
 }
