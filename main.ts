@@ -1,7 +1,7 @@
 import * as express from "express"
 const app = express()
 const port = 3000
-let activeSet : Array<card>
+let activeSet : Array<card> = [new card("hablo", "i speak"), new card("说", "i speak")]
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
