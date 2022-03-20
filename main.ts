@@ -59,11 +59,5 @@ function goToSetCreation(){
 }
 
 function goToPlaySet(){
-<<<<<<< HEAD
   (document.getElementsByClassName("card") as HTMLCollectionOf<HTMLElement>)[0].style.display = "inline_block";
-=======
-  document.getElementById("mySidebar").style.width = "500px";
-  document.getElementById("card").style.display = "inline_block"
-
->>>>>>> b725d63bceb5b08673a502e0f1e1b54ff499417f
 }
