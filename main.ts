@@ -48,13 +48,17 @@ function shuffleArray(array) {
 }
 
 function goToMenu(){
-  document.getElementById("card").setActive();
+  document.getElementById("card").style.display = "none"
+  /*x.style.display = "block";
+  x.style.display = "none";*/
 }
 
 function goToSetCreation(){
+  document.getElementById("card").style.display = "none"
   
 }
 
 function goToPlaySet(){
+  document.getElementById("card").style.display = "inline_block"
 
 }
