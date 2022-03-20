@@ -1,0 +1,38 @@
+"use strict";
+exports.__esModule = true;
+var express = require("express");
+var app = express();
+var port = 3000;
+var activeSet;
+app.get('/', function (req, res) {
+    res.send('Hello World!');
+});
+app.listen(port, function () {
+    console.log("Example app listening on port ".concat(port));
+});
+function showNext() {
+    var displayed = activeSet[0];
+    document.getElementById("card").textContent = displayed.Term;
+    activeSet = activeSet.slice(1);
+    //randomize
+    shuffleArray(activeSet);
+    activeSet.push(displayed);
+}
+/* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+}
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
