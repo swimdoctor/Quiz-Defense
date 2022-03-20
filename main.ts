@@ -21,7 +21,8 @@ function showNext() {
 }
 
 function flip() {
-  document.getElementById("card").textContent = activeSet[activeSet.length].Definition
+  document.getElementById("card").textContent = activeSet[activeSet.length - 1].Definition
+  document.getElementById("card").style.backgroundColor = "rgb(50, 255, 50)";
 
 }
 
