@@ -1,6 +1,7 @@
 import * as express from "express"
 const app = express()
 const port = 3000
+let activeSet : Array<card>
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
@@ -9,6 +10,15 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
+function showNext() {
+  let displayed : card = activeSet[0]
+  document.getElementById("card").textContent = displayed.Term
+  activeSet = activeSet.slice(1)
+  //randomize
+  shuffleArray(activeSet)
+  activeSet.push(displayed)
+}
 
 /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
 function openNav() {
@@ -20,4 +30,13 @@ function openNav() {
 function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
   document.getElementById("main").style.marginLeft = "0";
+}
+
+function shuffleArray(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+  }
 }
